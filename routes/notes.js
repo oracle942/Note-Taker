@@ -20,7 +20,7 @@ notes.post('/', (req, res) => {
   if (notes) {
     // Variable for the object we will save
     const newNote = {
-      note,
+      notes,
       note_id: uuid(),
     };
 
