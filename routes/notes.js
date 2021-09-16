@@ -10,17 +10,17 @@ notes.get('/notes', (req, res) => {
 });
 
 // POST Route for submitting notes
-notes.post('/', (req, res) => {
+notes.post('/notes', (req, res) => {
   console.info(`${req.method} request received to save notes`);
 
   // Destructuring assignment for the items in req.body
-  const { notes } = req.body;
+  const { note } = req.body;
 
   // If all the required properties are present
-  if (notes) {
+  if (note) {
     // Variable for the object we will save
     const newNote = {
-      notes,
+      note,
       note_id: uuid(),
     };
 
