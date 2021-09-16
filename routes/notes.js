@@ -19,22 +19,22 @@ notes.post('/', (req, res) => {
   // If all the required properties are present
   if (notes) {
     // Variable for the object we will save
-    const newNotes = {
+    const newNote = {
       note,
       note_id: uuid(),
     };
 
-    readAndAppend(newFeedback, './db/feedback.json');
+    readAndAppend(note, './db/db.json');
 
     const response = {
       status: 'success',
-      body: newFeedback,
+      body: newNote,
     };
 
     res.json(response);
   } else {
-    res.json('Error in posting feedback');
+    res.json('Error in posting note');
   }
 });
 
-module.exports = fb;
+module.exports = notes;
